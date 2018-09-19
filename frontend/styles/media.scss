@@ -220,10 +220,26 @@
   .highlights__feature {
     width: 100%;
     height: 590px;
+    position: relative;
     @include flex(center,center);
     flex-direction: column;
+    &:nth-child(1) {
+      order: 1;
+    }
     &:nth-child(2) {
       border-bottom: 1px solid rgba(0,0,0,.1);
+      order: 2;
+    }
+    &:nth-child(3) {
+      order: 4;
+    }
+    &:nth-child(4) {
+      order: 3;
+    }
+    img {
+      position: absolute;
+      margin: 0;
+      bottom: 0;
     }
   }
 
@@ -255,6 +271,10 @@
   }
   .pricing-planes__item {
     padding: 20px 0;
+  }
+
+  .highlights__feature {
+    height: 500px;
   }
 }
 
@@ -309,6 +329,9 @@
   #select p {
     margin-left: 0!important;
   }
+  .highlights__feature {
+    height: 450px;
+  }
 }
 
 @media all and (max-width: 400px){
@@ -317,10 +340,10 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-  }
-  .btn {
-    width: 70%;
-    margin: 10px 0;
+    .btn {
+      width: 70%;
+      margin: 10px 0;
+    }
   }
 
   .header-content .btn:nth-child(1) {
@@ -334,6 +357,11 @@
       margin: 20px auto;
     }
   }
+
+  .highlights__feature {
+    height: 400px;
+  }
+
   #select p {
     text-align: left;
     margin-left: 15px !important;
@@ -353,4 +381,11 @@
     width: 30px;
     height: 30px;
   }
+}
+
+@media all and (max-width: 350px){
+  .highlights__feature {
+    height: 320px;
+  }
+
 }
