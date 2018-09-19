@@ -3,6 +3,8 @@
 const
     gulp = require('gulp'),
     scss = require('gulp-sass'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     del = require('del'),
     sourcemaps = require('gulp-sourcemaps'),
     bs = require('browser-sync').create(),
@@ -34,6 +36,13 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('public/css'));
 });
 
+gulp.task('js', () => {
+   return gulp.src('frontend/js/**.*')
+       .pipe(uglify())
+       .pipe(concat('all.min.js'))
+       .pipe(gulp.dest('public/js'))
+});
+
 gulp.task('images', () => {
     return gulp.src('frontend/img/**.*')
         .pipe(gulp.dest('public/img'));
@@ -59,9 +68,10 @@ gulp.task('watch', () => {
     gulp.watch('frontend/styles/**.*', gulp.series('styles'));
     gulp.watch('frontend/img/**.*', gulp.series('images'));
     gulp.watch('frontend/index.html', gulp.series('html'));
+    gulp.watch('frontend/js/**.*', gulp.series('js'));
 });
 
-gulp.task('build',gulp.series('clean',gulp.parallel('html','styles','images','fonts')));
+gulp.task('build',gulp.series('clean',gulp.parallel('html','styles','js','images','fonts')));
 
 gulp.task('develop',
     gulp.series(
