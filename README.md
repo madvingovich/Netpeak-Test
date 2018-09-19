@@ -17,3 +17,9 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1"
 
+
+Для просмотра, откройте вайл index.html в папке public
+
+gulp build - собирает проект в папку public
+
+gulp develop - собирает проект и запускает browser-synk, открывает а локальном сервере и обновляет при измеениях. 
