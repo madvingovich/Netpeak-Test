@@ -1,0 +1,20 @@
+
+@mixin flex($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+$extra-bold: 'Nutino-ExtraBold', Arial, sans-serif;
+$bold: 'Nutino-Bold', Arial, sans-serif;
+$light: 'Nutino-Light', Arial, sans-serif;
+
+
+$f11: 0.6875em;
+$f14: 0.875em;
+$f15: 0.9375em;
+$f17: 1.0625em;
+$f20: 1.25em;
+$f35: 2.1875em;
+$f40: 2.5em;
+$f60: 3.75em;

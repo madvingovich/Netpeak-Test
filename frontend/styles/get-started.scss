@@ -1,0 +1,36 @@
+
+
+.get-started {
+  padding: 75px 0 95px;
+  background: url("../img/get-started-bg.jpg");
+  background-size: cover;
+
+  &__content {
+    @include flex(center, space-between);
+  }
+
+  &__description p {
+    height: 45px;
+    margin-top: 18px;
+  }
+  &__description h2 {
+    letter-spacing: 1.1px;
+  }
+
+  &__buttons {
+    margin-top: 22px;
+    a {
+      width: 170px;
+      letter-spacing: 0.85px;
+      &::before {
+        content: "Try It Free";
+      }
+      &:nth-child(1) {
+        margin-right: 16px;
+        &::before {
+          content: "Buy for $24";
+        }
+      }
+    }
+  }
+}

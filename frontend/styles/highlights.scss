@@ -1,0 +1,42 @@
+
+.highlights {
+  background-color: #f8f9fa;
+  padding: 120px 0;
+
+  &-content {
+    @include flex(center,center);
+    flex-wrap: wrap;
+    box-shadow: 0 6px 12px rgba(32, 33, 39, 0.08);
+  }
+
+  &__feature {
+    width: 50%;
+    text-align: center;
+
+    &:nth-child(1),
+    &:nth-child(4){
+      background: url("../img/highlights-feature-bg.jpg");
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+
+    > * {
+      margin: 0 auto;
+    }
+
+    img {
+      margin-top: 87px;
+      margin-bottom: -6px;
+      max-width: 80%;
+    }
+    h2 {
+      letter-spacing: 0;
+      text-transform: none;
+      line-height: 50px;
+      margin-bottom: 24px;
+    }
+    p {
+      max-width: 365px;
+    }
+  }
+}

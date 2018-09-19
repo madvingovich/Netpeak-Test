@@ -1,0 +1,229 @@
+
+.pricing {
+  padding: 120px 0;
+  background-color: #f8f9fa;
+
+  &__content {
+    @include flex(center, space-between);
+  }
+  &__description {
+    max-width: 370px;
+    margin-right: 40px;
+    h2 {
+      letter-spacing: .9px;
+    }
+    p.paragraph {
+      margin-top: 24px;
+    }
+  }
+  &-planes {
+    width: 57.2649573%;
+    @include flex(center, center);
+
+    &__item {
+      padding: 50px 0 55px;
+      text-align: center;
+      border-radius: 12px;
+      &_large {
+        width: 52.238806%;
+        background: url("../img/plan-bg.png");
+        background-size: cover;
+        z-index: 2;
+        & .btn:before {
+          content: "Buy Now";
+        }
+      }
+      &_small {
+        flex: 1;
+        box-shadow: 0 1px 3px rgba(32, 33, 39, 0.12);
+        margin-left: -13px;
+        z-index: 1;
+        height: 92%;
+        & .btn {
+          background-image: linear-gradient(-225deg, #009fc5 0%, #3cecb0 100%);
+          &:hover {
+            color: #ffffff;
+          }
+        }
+        & .btn:before {
+          content: "Get Free";
+          color: #fff;
+          background-image: linear-gradient(-225deg, #7956ec 0%, #2fb9f8 100%);
+        }
+      }
+    }
+
+    &__header {
+      width: 100%;
+      height: 39px;
+      background-color: rgba(255,255,255,.1);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      &_small p{
+        line-height: 39px;
+        color: #676c75;
+        box-shadow: 0 1px 0 #e7e8ea, inset 0 1px 0 #e7e8ea;
+        background-color: #f8f9fa;
+      }
+      p {
+        line-height: 39px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: $f11;
+        letter-spacing: 2.1px;
+      }
+
+    }
+
+    &__price {
+      font-size: $f60;
+      margin: 31px 0 22px;
+      &_small {
+        color: #282b31;
+        font-size: $f40;
+        margin: 36px 0 30px;
+      }
+    }
+    
+    &__list {
+      list-style-type: none;
+      text-align: left;
+      margin-left: 14%;
+      &_small {
+        color: #676c75;
+        margin: 12px 0 12px 14%;
+      }
+      li {
+        font-size: $f15;
+        img {
+          margin-right: 15px;
+        }
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    & .btn {
+      margin-top: 37px;
+      width: 71%;
+    }
+  }
+}
+
+.pricing form {
+  color: #676c75;
+
+  .options {
+    margin: 10px 0;
+    @include flex(center, flex-start);
+    label {
+      margin-right: 15px;
+    }
+  }
+
+  select {
+    height: 38px;
+    width: 25%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 15px;
+    color: #676c75;
+  }
+
+  .inputs {
+    @include flex(center, space-between);
+    padding-top: 3px;
+  }
+
+  input[type=text] {
+    height: 38px;
+    width: 56%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 5px  rgba(0,0,0,.2);
+    padding: 0 15px;
+    color: #676c75;
+    &::-webkit-input-placeholder { color: #999; font-size: $f17;}
+    &::-moz-placeholder          { color: #999; font-size: $f17;} /* Firefox 19+ */
+    &:-moz-placeholder           { color: #999; font-size: $f17;} /* Firefox 18- */
+    &:-ms-input-placeholder      { color: #999; font-size: $f17;}
+  }
+  button[type=submit] {
+    width: 35%;
+    margin-right: 5%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-image: linear-gradient(-225deg, #7956ec 0%, #2fb9f8 100%);
+    color: #fff;
+    font-size: $f17;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    line-height: 14px;
+    &:before {
+      content: 'Aply';
+      line-height: 40px;
+      background-image: linear-gradient(-225deg, #009fc5 0%, #3cecb0 100%);
+    }
+
+  }
+}
+
+#select {
+  display: none;
+  width: 25%;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px  rgba(0,0,0,.2);
+  position: relative;
+  cursor: pointer;
+  p {
+    margin-left: 20%;
+    line-height: 40px;
+  }
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40%;
+    right: 6%;
+    transform: translateY(-50%);
+    margin: 5px;
+    border-top: 5px solid #999;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+}
+.select-options {
+  position: absolute;
+  top: 105%;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+  box-shadow: 0 2px 5px  rgba(0,0,0,.2);
+  background: #fff;
+  transition: .3s;
+  height: 0;
+  overflow: hidden;
+  z-index: 2;
+  user-select: auto;
+  .option {
+    position: relative;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #fff;
+    border-radius: 0 0 5px 5px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    z-index: 2;
+    &:hover {
+      background: rgba(230, 255, 255, 0.93);
+    }
+  }
+}
+.select-active {
+  &:after {
+    transform: translateY(-50%) rotate(180deg) !important;
+  }
+}
